@@ -6,14 +6,14 @@ import java.util.concurrent.CopyOnWriteArraySet;
 
 public class NoSafeCollections {
     public static void main(String[] args) throws Exception{
-//        List<String> safeList = new CopyOnWriteArrayList();//Collections.synchronizedList(new ArrayList<>());
-        Set<String> hs = new CopyOnWriteArraySet();
+        List<String> safeList = new CopyOnWriteArrayList();//Collections.synchronizedList(new ArrayList<>());
+//        Set<String> hs = new CopyOnWriteArraySet();
 
         //会出现ConcurrentModificationException异常：并发修改异常
         for (int i = 0; i < 30; i++) {
             new Thread(() -> {
-                hs.add(UUID.randomUUID().toString());
-                    System.out.println(hs);
+                safeList.add(UUID.randomUUID().toString());
+                    System.out.println(safeList);
             }).start();
         }
     }
