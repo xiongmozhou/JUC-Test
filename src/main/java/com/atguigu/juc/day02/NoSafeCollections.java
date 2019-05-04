@@ -1,8 +1,8 @@
 package com.atguigu.juc.day02;
 
-import java.util.*;
+import java.util.List;
+import java.util.UUID;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.CopyOnWriteArraySet;
 
 public class NoSafeCollections {
     public static void main(String[] args) throws Exception{
